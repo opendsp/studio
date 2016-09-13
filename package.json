@@ -1,0 +1,36 @@
+{
+  "name": "studio",
+  "version": "1.0.0",
+  "description": "all of opendsp modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "stagas",
+  "license": "MIT",
+  "dependencies": {
+    "additive-osc": "github:opendsp/additive-osc",
+    "allpass": "github:opendsp/allpass",
+    "biquad": "github:opendsp/biquad",
+    "bitter": "github:opendsp/bitter",
+    "chord": "github:opendsp/chord",
+    "chords": "github:opendsp/chords",
+    "chords-of": "github:opendsp/chords-of",
+    "combfilter": "github:opendsp/combfilter",
+    "decimator": "github:opendsp/decimator",
+    "delay": "github:opendsp/delay",
+    "diodefilter": "github:opendsp/diodefilter",
+    "envelope": "github:opendsp/envelope",
+    "filter": "github:opendsp/filter",
+    "freeverb": "github:opendsp/freeverb",
+    "korg35lpf": "github:opendsp/korg35lpf",
+    "moogladder": "github:opendsp/moogladder",
+    "nopop": "github:opendsp/nopop",
+    "note": "github:opendsp/note",
+    "osc": "github:opendsp/osc",
+    "sampler": "github:opendsp/sampler",
+    "scales": "github:opendsp/scales",
+    "softclip": "github:opendsp/softclip",
+    "wavetable-osc": "github:opendsp/wavetable-osc"
+  }
+}

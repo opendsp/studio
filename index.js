@@ -18,5 +18,6 @@ export { default as note } from 'note';
 export { default as Sampler } from 'sampler';
 export { default as scales } from 'scales';
 export { default as softClip } from 'softclip';
+export { default as Step } from 'step';
 export * from 'osc';
 export * from 'wavetable-osc';

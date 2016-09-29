@@ -185,6 +185,15 @@ Object.defineProperty(exports, 'softClip', {
   }
 });
 
+var _step = require('step');
+
+Object.defineProperty(exports, 'Step', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_step).default;
+  }
+});
+
 var _osc = require('osc');
 
 Object.keys(_osc).forEach(function (key) {
@@ -211,7 +220,7 @@ Object.keys(_wavetableOsc).forEach(function (key) {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"additive-osc":2,"allpass":3,"biquad":4,"bitter":5,"chord":6,"chords":8,"chords-of":7,"combfilter":9,"delay":10,"diodefilter":11,"envelope":13,"filter":14,"freeverb":15,"korg35lpf":18,"moogladder":20,"nopop":22,"note":23,"osc":24,"sampler":26,"scales":27,"softclip":28,"wavetable-osc":29}],2:[function(require,module,exports){
+},{"additive-osc":2,"allpass":3,"biquad":4,"bitter":5,"chord":6,"chords":8,"chords-of":7,"combfilter":9,"delay":10,"diodefilter":11,"envelope":13,"filter":14,"freeverb":15,"korg35lpf":18,"moogladder":20,"nopop":22,"note":23,"osc":24,"sampler":26,"scales":27,"softclip":28,"step":29,"wavetable-osc":30}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1765,6 +1774,33 @@ var scales = exports.scales = {
 },{}],28:[function(require,module,exports){
 arguments[4][12][0].apply(exports,arguments)
 },{"dup":12}],29:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = step;
+function step(bpm) {
+  return function (sig, offset) {
+    offset = offset ? Math.round(60 / bpm * 4 * sampleRate * offset) : 0;
+    var max = Math.round(60 / bpm * 4 * sampleRate * sig);
+    var acc = 0;
+    var prev = 0;
+    return function (frame) {
+      frame += offset;
+      acc = frame - prev;
+      if (acc === 0 || acc === max) {
+        prev = frame;
+        acc = 0;
+        return true;
+      } else {
+        return false;
+      }
+    };
+  };
+}
+
+},{}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

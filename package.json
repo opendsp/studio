@@ -31,6 +31,7 @@
     "sampler": "github:opendsp/sampler",
     "scales": "github:opendsp/scales",
     "softclip": "github:opendsp/softclip",
+    "step": "github:opendsp/step",
     "wavetable-osc": "github:opendsp/wavetable-osc"
   },
   "devDependencies": {
